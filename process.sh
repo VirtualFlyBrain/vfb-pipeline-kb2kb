@@ -17,7 +17,7 @@ echo ''
 echo -e "travis_fold:start:neo4j_kb_old2new"
 echo '** Validate KB **'
 export BUILD_OUTPUT=${WORKSPACE}/KB2KB.out
-${WORKSPACE}/runsilent.sh "python3 ${SCRIPTS}neo4j_kb_old2new.py ${KBserver} ${KBuser} ${KBpassword} ${SCRIPTS}data_sig_vfb.csv"
+${WORKSPACE}/runsilent.sh "python3 ${SCRIPTS}neo4j_kb_old2new.py ${KBserver} ${KBuser} ${KBpassword} ${SCRIPTS}data_sig_vfb.csv ${SCRIPTS}property_mapping.csv ${MAXREL}"
 cp $BUILD_OUTPUT /logs/
 egrep 'Exception|Error|error|exception|warning' $BUILD_OUTPUT
 echo -e "travis_fold:end:neo4j_kb_old2new"
