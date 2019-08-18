@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 echo "Transform old KB to new schema"
 
 echo 'START' >> ${WORKSPACE}/tick.out
