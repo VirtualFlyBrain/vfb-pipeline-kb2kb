@@ -3,7 +3,7 @@
 set -e
 
 echo "process started"
-echo "VFB: vfb-pipeline-kb2kb"
+echo "Start: vfb-pipeline-kb2kb"
 echo "VFBTIME:"
 date
 
@@ -34,6 +34,7 @@ python3 ${SCRIPTS}neo4j_kb_old2new.py ${KBserver} ${KBuser} ${KBpassword} ${SCRI
 #cp $BUILD_OUTPUT /logs/
 #egrep 'Exception|Error|error|exception|warning' $BUILD_OUTPUT
 
+echo "End: vfb-pipeline-kb2kb"
 echo "VFBTIME:"
 date
 echo "process complete"
