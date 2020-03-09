@@ -9,10 +9,12 @@ ENV MAXREL=99999999
 ENV PING_SLEEP=120s
 ENV BUILD_OUTPUT=${WORKSPACE}/build.out
 
-RUN pip3 install wheel
-RUN pip3 install requests
-RUN pip3 install psycopg2
-RUN pip3 install pandas
+RUN apt-get update \
+  && apt-get install -y python3-pip python3-dev \
+  && cd /usr/local/bin \
+  && ln -s /usr/bin/python3 python \
+  && pip3 install --upgrade pip
+RUN pip3 install wheel requests psycopg2 pandas
 
 RUN apt-get -qq update || apt-get -qq update && \
 apt-get -qq -y install git curl wget default-jdk pigz maven libpq-dev python-dev tree gawk
