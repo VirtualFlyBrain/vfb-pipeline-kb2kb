@@ -10,10 +10,9 @@ ENV PING_SLEEP=120s
 ENV BUILD_OUTPUT=${WORKSPACE}/build.out
 
 RUN apt-get update \
-  && apt-get install -y python3-pip python3-dev \
-  && cd /usr/local/bin \
-  && ln -s /usr/bin/python3 python \
+  && apt-get install -y python3-dev \
   && pip3 install --upgrade pip
+
 RUN pip3 install wheel requests psycopg2 pandas base36
 
 RUN apt-get -qq update || apt-get -qq update && \
