@@ -14,7 +14,7 @@ RUN apt-get update \
   && cd /usr/local/bin \
   && ln -s /usr/bin/python3 python \
   && pip3 install --upgrade pip
-RUN pip3 install wheel requests psycopg2 pandas
+RUN pip3 install wheel requests psycopg2 pandas base36
 
 RUN apt-get -qq update || apt-get -qq update && \
 apt-get -qq -y install git curl wget default-jdk pigz maven libpq-dev python-dev tree gawk
